@@ -10,12 +10,12 @@ h1{
   @extend .text;
 }
 
-@mixin include-border(){
-  border: 3px solid yellow;
+@mixin include-border($border ){
+  border: $border ;
 }
 
 .btn{
-  @include include-border();
+  @include include-border(3px solid yellow);
 }
 
 @function background ($backgroundColor){
