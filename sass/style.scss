@@ -1,0 +1,54 @@
+$backgroundColor: white;
+.text{
+  color : red;
+  font-size: 20px;
+}
+textarea{
+  @extend .text ;
+}
+h1{
+  @extend .text;
+}
+
+@mixin include-border(){
+  border: 3px solid yellow;
+}
+
+.btn{
+  @include include-border();
+}
+
+@function background ($backgroundColor){
+  $color:black ;
+  @if($backgroundColor != white){
+    $color : white;
+  }
+  @return $color;
+}
+
+$languages : 'HTML5', 'CSS3', 'JAVA', 'React' ;
+
+@function ListFirstValue($languages){
+  @return nth($languages,1)
+}
+@function ListLastValue($languages){
+  @return nth($languages,length($languages))
+}
+
+$backgroundColor : blue;
+.test {
+  background: $backgroundColor;
+  color : background($backgroundColor);
+  test1: ListFirstValue($languages);
+  test2: ListLastValue($languages);
+}
+
+
+
+
+
+
+
+
+
+
