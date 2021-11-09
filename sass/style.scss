@@ -39,8 +39,9 @@ $backgroundColor : blue;
 .test {
   background: $backgroundColor;
   color : background($backgroundColor);
-  test1: ListFirstValue($languages);
-  test2: ListLastValue($languages);
+  content: ListFirstValue($languages);
+  content: ListLastValue($languages);
+
 }
 
 
